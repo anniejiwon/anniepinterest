@@ -10,14 +10,36 @@ import UIKit
 import PinterestSDK
 
 class ViewController: UIViewController {
+
+    
     override func viewDidAppear(_ animated: Bool) {
+        
+//        let didGetAuth: PDKClientSuccess = { response in
+//            print("ok, i logged in to pinterest: %s", response ?? "response was nil")
+//        }
+//        
+//        let didFailToGetAuth: PDKClientFailure = { error in
+//            print("failed to log in: %s", error ?? "no error")
+//        }
+//        
+//        let permission = [PDKClientReadPublicPermissions];
+//        
+//        
+//        print("PRINTTTT: \(permission)")
+        
+
         PDKClient.sharedInstance()
             .authenticate(withPermissions: [
                 PDKClientReadPublicPermissions,
-                PDKClientWritePublicPermissions],
+                PDKClientWritePublicPermissions,
+                ],
                           from: self,
-                          withSuccess: { print($0!) },
-                          andFailure: { print($0!) })
+                          withSuccess: { response in
+                            print("ok, i logged in to pinterest: %s", response ?? "response was nil")
+                            },
+                          andFailure: { error in
+                            print("failed to log in: %s", error ?? "no error")
+            })
     }
     
     override func viewDidLoad() {
