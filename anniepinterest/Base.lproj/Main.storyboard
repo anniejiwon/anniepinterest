@@ -24,6 +24,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinterest" translatesAutoresizingMaskIntoConstraints="NO" id="hGs-Lt-qp1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhv-u1-OPt">
+                                <rect key="frame" x="0.0" y="415" width="375" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="9kJ-ng-Uti"/>
+                                    <constraint firstAttribute="height" constant="89" id="oLT-qY-tUW"/>
+                                </constraints>
+                                <state key="normal" title="Authenticating..."/>
+                                <connections>
+                                    <action selector="clickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C5q-tS-ExR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -33,12 +44,45 @@
                             <constraint firstItem="hGs-Lt-qp1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="F1w-L1-QdO"/>
                             <constraint firstItem="hGs-Lt-qp1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XQ1-M3-IgB"/>
                             <constraint firstItem="hGs-Lt-qp1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eMd-DT-kak"/>
+                            <constraint firstItem="dhv-u1-OPt" firstAttribute="leading" secondItem="hGs-Lt-qp1" secondAttribute="leading" id="nSK-aS-nZi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dhv-u1-OPt" secondAttribute="bottom" constant="163" id="y4t-hM-tzs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clickLabel" destination="dhv-u1-OPt" id="ef6-gL-F31"/>
+                        <segue destination="NsY-EU-shC" kind="show" id="Xo2-bS-Y0i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-148" y="126.38680659670166"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Dej-Xv-1Lf">
+            <objects>
+                <viewController id="NsY-EU-shC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nhx-Qs-t1Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="zcy-Vn-U55"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AFg-Lj-2rc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome, x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2j-4p-1oj">
+                                <rect key="frame" x="62" y="59" width="202" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4d-eI-YlR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="581.60000000000002" y="125.4872563718141"/>
         </scene>
     </scenes>
     <resources>

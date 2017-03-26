@@ -11,7 +11,9 @@ import PinterestSDK
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var clickLabel: UIButton!
     
+   
     override func viewDidAppear(_ animated: Bool) {
         
 //        let didGetAuth: PDKClientSuccess = { response in
@@ -24,7 +26,7 @@ class ViewController: UIViewController {
 //        
 //        let permission = [PDKClientReadPublicPermissions];
 //        
-//        
+//
 //        print("PRINTTTT: \(permission)")
         
 
@@ -36,10 +38,29 @@ class ViewController: UIViewController {
                           from: self,
                           withSuccess: { response in
                             print("ok, i logged in to pinterest: %s", response ?? "response was nil")
+                            
+                            let myName = response?.user().firstName!
+                            
+                            self.clickLabel?.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
+                            self.clickLabel.titleLabel?.textAlignment = NSTextAlignment.center
+                            
+                            self.clickLabel.setTitle("Welcome, \(myName!)! \nClick to see your boards!", for: .normal)
+                            
                             },
                           andFailure: { error in
                             print("failed to log in: %s", error ?? "no error")
+                            
+                            
             })
+        
+
+        
+//        
+//        @IBAction func clickAction(_ sender: Any) {
+//            
+//        }
+        
+        
     }
     
     override func viewDidLoad() {
