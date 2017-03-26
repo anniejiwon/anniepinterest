@@ -44,7 +44,9 @@ class ViewController: UIViewController {
                             self.clickLabel?.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
                             self.clickLabel.titleLabel?.textAlignment = NSTextAlignment.center
                             
-                            self.clickLabel.setTitle("Welcome, \(myName!)! \nClick to see your boards!", for: .normal)
+                            self.clickLabel.setTitle("Welcome, \(myName!)!", for: .normal)
+                            
+                            self.performSegue(withIdentifier: "Boards", sender: self)
                             
                             },
                           andFailure: { error in
@@ -55,13 +57,16 @@ class ViewController: UIViewController {
         
 
         
-//        
-//        @IBAction func clickAction(_ sender: Any) {
-//            
-//        }
-        
+     
         
     }
+    
+//    @IBAction func clickLabelTap(_ sender: UIButton!) {
+//        
+//        self.performSegue(withIdentifier: "Boards", sender: self)
+//        
+//    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
