@@ -13,14 +13,18 @@ class Boards: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     
-    
+    let myBoards = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        //PDKClient.sharedInstance()
+        PDKClient.sharedInstance()
+            .getAuthenticatedUserBoards(withFields: ["id", "name","url","description","creator","created_at","counts","image"], success: { data in
+                let myData = data?.parsedJSONDictionary["data"] as? [[String: Any]];
+                print("MY DATA-------- \(myData)")
+            }, andFailure: nil)
         
         
         
