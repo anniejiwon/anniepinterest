@@ -13,7 +13,8 @@ class Boards: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     
-    let myBoards = [String]()
+    //var myBoards = [AnyObject]()
+    var myBoards: NSMutableArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +23,19 @@ class Boards: UIViewController {
         
         PDKClient.sharedInstance()
             .getAuthenticatedUserBoards(withFields: ["id", "name","url","description","creator","created_at","counts","image"], success: { data in
-                let myData = data?.parsedJSONDictionary["data"] as? [[String: Any]];
-                print("MY DATA-------- \(myData)")
+                //guard let json = result?.parsedJSONDictionary["data"] as? [[String: Any]] else {
+            
+                let myData = data?.parsedJSONDictionary["data"] as! [[String: Any]];
+                //print("MY DATA-------- \(myData)")
+                for item in myData {
+                    //self.myBoards.append(item)
+                    self.myBoards.add(item)
+                    print("MY DATA-------- \(self.myBoards)")
+                }
             }, andFailure: nil)
         
         
-        
+        //print("MY DATA-------- \(myBoards)")
 //        navigationBar.titleTextAttributes =
         
     }
@@ -40,3 +48,4 @@ class Boards: UIViewController {
 
    
 }
+
