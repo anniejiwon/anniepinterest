@@ -11,31 +11,32 @@ import PinterestSDK
 
 class Boards: UIViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
     
     //var myBoards = [AnyObject]()
+//    var myBoards = [NSMutableData]()
     var myBoards: NSMutableArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("I AM HEREE????")
         // Do any additional setup after loading the view.
         
         PDKClient.sharedInstance()
-            .getAuthenticatedUserBoards(withFields: ["id", "name","url","description","creator","created_at","counts","image"], success: { data in
-                //guard let json = result?.parsedJSONDictionary["data"] as? [[String: Any]] else {
-            
-                let myData = data?.parsedJSONDictionary["data"] as! [[String: Any]];
-                //print("MY DATA-------- \(myData)")
-                for item in myData {
-                    //self.myBoards.append(item)
-                    self.myBoards.add(item)
-                    print("MY DATA-------- \(self.myBoards)")
+            .getAuthenticatedUserBoards(withFields: ["id", "name","url","description","creator","created_at","counts","image"], success: { (data) in
+             
+                if let myData = data?.parsedJSONDictionary["data"] as? [[String: Any]] {
+                    print("MY DATA-------- \(myData)")
                 }
+                
+//                for item in myData {
+//                    //self.myBoards.append(item)
+//                    self.myBoards.add(item)
+//                    print("MY DATA-------- \(self.myBoards)")
+//                }
             }, andFailure: nil)
         
         
-        //print("MY DATA-------- \(myBoards)")
+//        print("MY DATA-------- \(self.myBoards)")
 //        navigationBar.titleTextAttributes =
         
     }

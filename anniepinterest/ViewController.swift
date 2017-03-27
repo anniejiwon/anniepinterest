@@ -56,16 +56,10 @@ class ViewController: UIViewController {
             })
         
 
-        
+        //print("i am in the view controller")
      
         
     }
-    
-//    @IBAction func clickLabelTap(_ sender: UIButton!) {
-//        
-//        self.performSegue(withIdentifier: "Boards", sender: self)
-//        
-//    }
     
     
     override func viewDidLoad() {
