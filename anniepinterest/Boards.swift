@@ -21,6 +21,7 @@ class Boards: UITableViewController {
         var myBoards = NSMutableArray()
 //    var myBoards = Array<Array<AnyObject>>()
 
+    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,28 +79,30 @@ class Boards: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        
-//        return myBoards.count
-//        
-//    }
-//
-//    override func  tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "eachCell")
-//        print("cell------ \(cell)")
-//        cell?.textLabel?.text = ((myBoards[indexPath.row] as AnyObject).name.string)
-//        
-//        return cell!
-//        
-//        
-//    }
-//    
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        index = indexPath.row
+        
+        self.performSegue(withIdentifier: "pinsView", sender: index)
+        
+//        self.performSegue(withIdentifier: "pinsView", sender: indexPath.row)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let currentBoard = myBoards[index]
+        print("....... \(currentBoard)")
+    }
+  
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableview.reloadData()
     }
-//
+    
+
+    
+    
 //    override func didReceiveMemoryWarning() {
 //        super.didReceiveMemoryWarning()
 //        // Dispose of any resources that can be recreated.

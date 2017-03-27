@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:anniepinterest/PinsViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:anniepinterest.xcodeproj">
    </FileRef>
    <FileRef
