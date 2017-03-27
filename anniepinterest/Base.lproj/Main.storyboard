@@ -61,18 +61,17 @@
         <!--Boards-->
         <scene sceneID="pY8-Lv-1k8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IrG-Pw-cHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Sxh-Sf-d1j" customClass="Boards" customModule="anniepinterest" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="253" sectionHeaderHeight="28" sectionFooterHeight="28" id="YXV-Un-AOU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="253" id="N5A-xA-wJH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customcell" rowHeight="253" id="N5A-xA-wJH">
                                 <rect key="frame" x="0.0" y="28" width="375" height="253"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N5A-xA-wJH" id="K7N-hc-Fzf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mL-dg-fRM">
@@ -91,8 +90,16 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Sxh-Sf-d1j" id="0bz-qL-x5x"/>
+                            <outlet property="delegate" destination="Sxh-Sf-d1j" id="uj1-vt-jwS"/>
+                        </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tableview" destination="YXV-Un-AOU" id="UOj-fK-iRL"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IrG-Pw-cHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="648.79999999999995" y="116.49175412293854"/>
         </scene>

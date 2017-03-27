@@ -12,52 +12,82 @@ import Foundation
 import SwiftyJSON
 
 
-class Boards: UIViewController {
+class Boards: UITableViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet var tableview: UITableView!
 
-    var myBoards: NSMutableArray = []
-//    var myBoards: [String: AnyObject] = []
-//    var myBoards: [Dictionary<String, String>] = [Dictionary<String, String>]()
+    //@IBOutlet weak var navigationBar: UINavigationBar!
+    
+        var myBoards = NSMutableArray()
+//    var myBoards = Array<Array<AnyObject>>()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         PDKClient.sharedInstance()
-            .getAuthenticatedUserBoards(withFields: ["id", "name","url","description","image"], success: { data in
-                 guard let myData = data?.parsedJSONDictionary["data"] as? [[String: Any]]  else {
+            .getAuthenticatedUserBoards(withFields: ["id", "name","url","description","image"],
+                success: { (data) in
+                    guard let myData = data?.parsedJSONDictionary["data"] as? [[String: Any]]
+                        
+                    else {
                         return
                     }
-                
-                    //print("MY DATA-------- \(myData[0])")
                     
+                    let list = NSMutableArray()
                     for item in myData {
-                        
-                        
-                        //let valid = JSONSerialization.isValidJSONObject(board)
-                        //print(valid)
-                        self.myBoards.add(item)
+                        list.add(item)
+                    }
                     
-                }
-                
-                
+                    DispatchQueue.main.async {
+                        self.myBoards = list
+                        self.tableView.reloadData()
+                    }
+                    
             }, andFailure: nil)
-        
-        //print("myboards..... \(self.myBoards)")
-        
-//        navigationBar.titleTextAttributes =
-        
-        
-        
+     
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    //tableview
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
     }
     
-
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath) 
+        cell.textLabel?.text = "test"
+        return cell
+    }
+    
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        
+//        return myBoards.count
+//        
+//    }
+//
+//    override func  tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "eachCell")
+//        print("cell------ \(cell)")
+//        cell?.textLabel?.text = ((myBoards[indexPath.row] as AnyObject).name.string)
+//        
+//        return cell!
+//        
+//        
+//    }
+//    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        tableview.reloadData()
+//    }
+//    
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//    }
+//    
+//
    
 }

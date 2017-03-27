@@ -19,14 +19,10 @@ class ViewController: UIViewController {
 //        let didGetAuth: PDKClientSuccess = { response in
 //            print("ok, i logged in to pinterest: %s", response ?? "response was nil")
 //        }
-//        
 //        let didFailToGetAuth: PDKClientFailure = { error in
 //            print("failed to log in: %s", error ?? "no error")
 //        }
-//        
 //        let permission = [PDKClientReadPublicPermissions];
-//        
-//
 //        print("PRINTTTT: \(permission)")
         
 
