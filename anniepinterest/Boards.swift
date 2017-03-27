@@ -12,8 +12,10 @@ import PinterestSDK
 class Boards: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
-    
-    let myBoards = [String]()
+
+    var myBoards: NSMutableArray = []
+//    var myBoards: [String: AnyObject] = []
+//    var myBoards: [Dictionary<String, String>] = [Dictionary<String, String>]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +23,30 @@ class Boards: UIViewController {
         // Do any additional setup after loading the view.
         
         PDKClient.sharedInstance()
-            .getAuthenticatedUserBoards(withFields: ["id", "name","url","description","creator","created_at","counts","image"], success: { data in
-                let myData = data?.parsedJSONDictionary["data"] as? [[String: Any]];
-                print("MY DATA-------- \(myData)")
+            .getAuthenticatedUserBoards(withFields: ["id", "name","url","description","image"], success: { data in
+                 guard let myData = data?.parsedJSONDictionary["data"] as? [[String: Any]]  else {
+                        return
+                    }
+                
+                    print("MY DATA-------- \(myData[0])")
+                    
+                    for item in myData {
+                        
+                        
+                        //let valid = JSONSerialization.isValidJSONObject(board)
+                        //print(valid)
+                        self.myBoards.add(item)
+                    
+                }
+                
+                
             }, andFailure: nil)
         
-        
+        //print("myboards..... \(self.myBoards)")
         
 //        navigationBar.titleTextAttributes =
+        
+        
         
     }
 
