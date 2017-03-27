@@ -39,6 +39,7 @@ class Boards: UITableViewController {
                         list.add(item)
                     }
                     
+                    
                     DispatchQueue.main.async {
                         self.myBoards = list
                         self.tableView.reloadData()
@@ -52,12 +53,28 @@ class Boards: UITableViewController {
     //tableview
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return myBoards.count
     }
     
+    @IBOutlet weak var tableViewLabel: UILabel!
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath) 
-        cell.textLabel?.text = "test"
+        
+        var current = myBoards[indexPath.row] as! [String: Any]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath)
+        
+//        let description = current["description"]!
+//        
+//        let image = current["image"] as? [[String:AnyObject]]
+//        let imageUrl = image?[0]["url"] as? String
+//        print(imageUrl)
+//        
+//        
+
+    
+        cell.textLabel?.text = current["name"] as? String
+        
         return cell
     }
     
@@ -78,11 +95,11 @@ class Boards: UITableViewController {
 //        
 //    }
 //    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        tableview.reloadData()
-//    }
-//    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableview.reloadData()
+    }
+//
 //    override func didReceiveMemoryWarning() {
 //        super.didReceiveMemoryWarning()
 //        // Dispose of any resources that can be recreated.
