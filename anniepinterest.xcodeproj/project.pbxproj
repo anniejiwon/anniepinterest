@@ -13,6 +13,7 @@
 		793B6E4F1E85C934004CA7C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 793B6E4D1E85C934004CA7C1 /* Main.storyboard */; };
 		793B6E511E85C934004CA7C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793B6E501E85C934004CA7C1 /* Assets.xcassets */; };
 		793B6E541E85C934004CA7C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 793B6E521E85C934004CA7C1 /* LaunchScreen.storyboard */; };
+		79632E121E88B99600EB2258 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79632E111E88B99600EB2258 /* Board.swift */; };
 		DBFB86179B78903EC2F2874C /* Pods_anniepinterest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB407136074F7B7F17C7B3A8 /* Pods_anniepinterest.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		793B6E501E85C934004CA7C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		793B6E531E85C934004CA7C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		793B6E551E85C934004CA7C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79632E111E88B99600EB2258 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		AB407136074F7B7F17C7B3A8 /* Pods_anniepinterest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_anniepinterest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				79199C481E887D31005EF93E /* Boards.swift */,
+				79632E111E88B99600EB2258 /* Board.swift */,
 				793B6E491E85C934004CA7C1 /* AppDelegate.swift */,
 				793B6E4B1E85C934004CA7C1 /* ViewController.swift */,
 				793B6E4D1E85C934004CA7C1 /* Main.storyboard */,
@@ -217,6 +220,7 @@
 			files = (
 				793B6E4C1E85C934004CA7C1 /* ViewController.swift in Sources */,
 				793B6E4A1E85C934004CA7C1 /* AppDelegate.swift in Sources */,
+				79632E121E88B99600EB2258 /* Board.swift in Sources */,
 				79199C491E887D31005EF93E /* Boards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,6 +6,7 @@ target 'anniepinterest' do
   use_frameworks!
 
   pod "PinterestSDK", :git => "https://github.com/pinterest/ios-pdk.git"
+  pod 'SwiftyJSON'
   
   # Pods for anniepinterest
 

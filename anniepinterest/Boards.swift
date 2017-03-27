@@ -8,6 +8,9 @@
 
 import UIKit
 import PinterestSDK
+import Foundation
+import SwiftyJSON
+
 
 class Boards: UIViewController {
 
@@ -28,7 +31,7 @@ class Boards: UIViewController {
                         return
                     }
                 
-                    print("MY DATA-------- \(myData[0])")
+                    //print("MY DATA-------- \(myData[0])")
                     
                     for item in myData {
                         
