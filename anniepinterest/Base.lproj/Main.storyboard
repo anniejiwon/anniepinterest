@@ -61,48 +61,44 @@
         <!--Boards-->
         <scene sceneID="pY8-Lv-1k8">
             <objects>
-                <viewController id="Sxh-Sf-d1j" customClass="Boards" customModule="anniepinterest" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="h9d-35-p1O"/>
-                        <viewControllerLayoutGuide type="bottom" id="RDY-46-Mkd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BNz-yY-Shp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ys8-mY-bNE">
-                                <rect key="frame" x="70" y="143" width="149" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKW-Ce-5MY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="DeZ-95-ct2"/>
-                                    <constraint firstAttribute="width" constant="375" id="ixp-Mx-Cja"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Title" id="dkP-d6-xI8"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="AKW-Ce-5MY" firstAttribute="top" secondItem="BNz-yY-Shp" secondAttribute="top" id="BlQ-LI-w9y"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="navigationBar" destination="AKW-Ce-5MY" id="Xuf-Te-ksd"/>
-                    </connections>
-                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IrG-Pw-cHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Sxh-Sf-d1j" customClass="Boards" customModule="anniepinterest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="253" sectionHeaderHeight="28" sectionFooterHeight="28" id="YXV-Un-AOU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="253" id="N5A-xA-wJH">
+                                <rect key="frame" x="0.0" y="28" width="375" height="253"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N5A-xA-wJH" id="K7N-hc-Fzf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mL-dg-fRM">
+                                            <rect key="frame" x="58" y="192" width="258" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.79719883419689119" green="0.79719883419689119" blue="0.79719883419689119" alpha="0.43802266725352113" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="mL9-b3-ZJx">
+                                            <rect key="frame" x="58" y="8" width="258" height="187"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                </viewController>
             </objects>
             <point key="canvasLocation" x="648.79999999999995" y="116.49175412293854"/>
         </scene>
     </scenes>
     <resources>
+        <image name="defaultImage" width="128" height="128"/>
         <image name="pinterest" width="300" height="225"/>
     </resources>
 </document>
