@@ -15,7 +15,6 @@
 		793B6E541E85C934004CA7C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 793B6E521E85C934004CA7C1 /* LaunchScreen.storyboard */; };
 		79632E121E88B99600EB2258 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79632E111E88B99600EB2258 /* Board.swift */; };
 		7984E4711E89D99B00DAEBBE /* PinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7984E4701E89D99B00DAEBBE /* PinsViewController.swift */; };
-		7984E4731E8A0ED000DAEBBE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7984E4721E8A0ED000DAEBBE /* README.md */; };
 		DBFB86179B78903EC2F2874C /* Pods_anniepinterest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB407136074F7B7F17C7B3A8 /* Pods_anniepinterest.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +31,6 @@
 		793B6E551E85C934004CA7C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79632E111E88B99600EB2258 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		7984E4701E89D99B00DAEBBE /* PinsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinsViewController.swift; sourceTree = "<group>"; };
-		7984E4721E8A0ED000DAEBBE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AB407136074F7B7F17C7B3A8 /* Pods_anniepinterest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_anniepinterest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,7 +76,6 @@
 				793B6E501E85C934004CA7C1 /* Assets.xcassets */,
 				793B6E521E85C934004CA7C1 /* LaunchScreen.storyboard */,
 				793B6E551E85C934004CA7C1 /* Info.plist */,
-				7984E4721E8A0ED000DAEBBE /* README.md */,
 			);
 			path = anniepinterest;
 			sourceTree = "<group>";
@@ -224,7 +221,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7984E4731E8A0ED000DAEBBE /* README.md in Sources */,
 				793B6E4C1E85C934004CA7C1 /* ViewController.swift in Sources */,
 				7984E4711E89D99B00DAEBBE /* PinsViewController.swift in Sources */,
 				793B6E4A1E85C934004CA7C1 /* AppDelegate.swift in Sources */,

@@ -5,6 +5,9 @@
       location = "group:anniepinterest/PinsViewController.swift">
    </FileRef>
    <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
       location = "group:anniepinterest.xcodeproj">
    </FileRef>
    <FileRef
