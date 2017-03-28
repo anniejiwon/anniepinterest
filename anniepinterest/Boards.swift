@@ -15,8 +15,6 @@ import SwiftyJSON
 class Boards: UITableViewController {
 
     @IBOutlet var tableview: UITableView!
-
-    //@IBOutlet weak var navigationBar: UINavigationBar!
     
         var myBoards = NSMutableArray()
 //    var myBoards = Array<Array<AnyObject>>()
@@ -70,29 +68,24 @@ class Boards: UITableViewController {
 //        let image = current["image"] as? [[String:AnyObject]]
 //        let imageUrl = image?[0]["url"] as? String
 //        print(imageUrl)
-//        
-//        
-
     
         cell.textLabel?.text = current["name"] as? String
         
         return cell
     }
     
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         index = indexPath.row
         
         self.performSegue(withIdentifier: "pinsView", sender: index)
-        
 //        self.performSegue(withIdentifier: "pinsView", sender: indexPath.row)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let currentBoard = myBoards[index]
-        print("....... \(currentBoard)")
+        //print("....... \(currentBoard)")
         
         if (segue.identifier == "pinsView") {
             if let selectedViewController = segue.destination as? PinsViewController {
@@ -108,14 +101,5 @@ class Boards: UITableViewController {
         tableview.reloadData()
     }
     
-
-    
-    
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
-//    
-//
    
 }

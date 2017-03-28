@@ -51,20 +51,8 @@ class ViewController: UIViewController {
     }
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        //
-        //        PDKClient.sharedInstance().getBoardPins(boardID, fields: ["id", "image", "note"], withSuccess: { (responseObject :PDKResponseObject!) -> Void in
-        //
-        //            print(responseObject.pins().first!.descriptionText)
-        //
-        //        })  { (err :NSError!) -> Void in
-        //            print("error NSError: \(err)")
-        //        }
-        
     }
     
     override func didReceiveMemoryWarning() {
