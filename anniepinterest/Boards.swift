@@ -93,6 +93,14 @@ class Boards: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let currentBoard = myBoards[index]
         print("....... \(currentBoard)")
+        
+        if (segue.identifier == "pinsView") {
+            if let selectedViewController = segue.destination as? PinsViewController {
+                selectedViewController.selectedData = currentBoard as! NSDictionary
+                selectedViewController.boardId = (currentBoard as! NSDictionary)["id"] as? String
+                selectedViewController.boardTitle = (currentBoard as! NSDictionary)["name"] as? String
+            }
+        }
     }
   
     override func viewDidAppear(_ animated: Bool) {

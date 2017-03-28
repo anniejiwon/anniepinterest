@@ -22,10 +22,8 @@ class ViewController: UIViewController {
 //        let didFailToGetAuth: PDKClientFailure = { error in
 //            print("failed to log in: %s", error ?? "no error")
 //        }
-//        let permission = [PDKClientReadPublicPermissions];
-//        print("PRINTTTT: \(permission)")
-        
 
+    
         PDKClient.sharedInstance()
             .authenticate(withPermissions: [
                 PDKClientReadPublicPermissions,
@@ -47,21 +45,11 @@ class ViewController: UIViewController {
                             },
                           andFailure: { error in
                             print("failed to log in: %s", error ?? "no error")
-                            
-                            
+            
             })
-        
-
-        
-     
-        
+ 
     }
     
-//    @IBAction func clickLabelTap(_ sender: UIButton!) {
-//        
-//        self.performSegue(withIdentifier: "Boards", sender: self)
-//        
-//    }
     
     
     override func viewDidLoad() {

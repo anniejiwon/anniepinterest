@@ -16,14 +16,16 @@ class Board {
     var image: String!
     var url: String!
     
-    //let json = JSON(data: dataFromNetworking)
-    
-//    if let name = json[self.name].string {
-//            self.description = json[name].string
-//            self.name = json[description].string
-//            self.id = json[id].string
-//            self.image = json[["image"]["url"].string
-//            self.url = json[url].string
-//            
+//    let json = JSON(data: dataFromNetworking)
+//    
+//    init(description: String, name: String, id: String, image: String, url: String) {
+//        self.description = json[name].string
+//        self.name = json[description].string
+//        self.id = json[id].string
+//        self.image = json[["image"]["url"].string
+//        self.url = json[url].string
+//        
 //    }
+    
+    
 }
